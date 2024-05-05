@@ -1,6 +1,8 @@
+
 part of 'todo_remote_datasource.dart';
 
 class  _TodoRemoteDatasource implements TodoRemoteDatasource{
+  
    _TodoRemoteDatasource(
     this._dio, {
     this.baseUrl,
@@ -13,10 +15,19 @@ class  _TodoRemoteDatasource implements TodoRemoteDatasource{
   String? baseUrl;
 
   @override
-  Future<List<Todo>> getAllTodo() {
-    // TODO: implement getAllTodo
-    throw UnimplementedError();
+  Future<List<Todo>> getAllTodo() async {
+
+     try {
+      Response response = await _dio.get(Constants.getTodoApiUrl);
+      List<Todo> todoList = response.data.map((dynamic item) {
+      return Todo.fromJson(item); 
+    }).toList();
+
+    return todoList;
+     
   }
-
-
+ catch(e){
+        throw Exception('Erreur ${e} lors de la récupération des données');
+    } 
+  }
 }
