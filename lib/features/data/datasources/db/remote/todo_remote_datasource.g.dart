@@ -17,7 +17,7 @@ class  _TodoRemoteDatasource implements TodoRemoteDatasource{
   @override
   Future<List<Todo>> getAllTodo() async {
 
-     try {
+    try {
       Response response = await _dio.get(Constants.getTodoApiUrl);
       List<Todo> todoList = response.data.map((dynamic item) {
       return Todo.fromJson(item); 
@@ -27,7 +27,7 @@ class  _TodoRemoteDatasource implements TodoRemoteDatasource{
      
   }
  catch(e){
-        throw Exception('Erreur ${e} lors de la récupération des données');
+        throw Exception('Eror ${e}');
     } 
   }
 }
