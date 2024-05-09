@@ -32,26 +32,41 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: const HomePage() 
+      body: const Card() 
 
     );
   }
 }
 
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Card extends StatefulWidget {
+  const Card({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Card> createState() => _CardState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _CardState extends State<Card> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ListView.builder(
+      itemCount: 10,
+      itemBuilder: (context,index){
+        return Container(
+      width: 500,
+      height: 110,
+      child: 
+            const CardStudent(todo: Todo(id: "te", description: "te"),
+    )
+    )
+    ;
+    }
+    );
+    }
+      
+     
   }
-}
+
 
 
