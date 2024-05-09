@@ -62,8 +62,7 @@ class _CardState extends State<Card> {
     )
     ;
     }
-    );
-    }
+    );}
       
      
   }
