@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:zara_ao/features/presentation/widgets/form.dart';
+
+import '../../data/model/FormField.dart';
 
 
 class ShowModal extends StatelessWidget {
@@ -7,6 +10,7 @@ class ShowModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(50.0),
       child: ElevatedButton(
         child:  const Icon(Icons.add, color: Colors.deepOrange, size: 28),
         onPressed: () {
@@ -14,12 +18,25 @@ class ShowModal extends StatelessWidget {
             context: context,
             builder: (BuildContext context) {
               return SizedBox(
-                height: 200,
+                height: 500,
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const <Widget>[
-                      Text('GeeksforGeeks'),
+                    children: [
+                      MyForm(
+                      fields: [
+                      FormFieldData(label: 'Name', key: 'name', hint: 'Enter your name'),
+                      FormFieldData(label: 'Email', key: 'email', hint: 'Enter your email'),
+                      FormFieldData(label: 'Password', key: 'password', hint: 'Enter your password', obscureText: true),
+            ]
+                      , 
+                      onSubmit: (formData) {
+              // Handle form submission here
+                    print('Form submitted with data:');
+                  formData.forEach((key, value) {
+                    print('$key: $value');
+              });
+            },)
                     ],
                   ),
                 ),

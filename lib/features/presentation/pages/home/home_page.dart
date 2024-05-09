@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:zara_ao/features/data/providers/todoProvider.dart';
+import 'package:zara_ao/features/presentation/widgets/modal.dart';
 import 'package:zara_ao/features/presentation/widgets/widgets.dart';
 
 import '../../../data/model/todo.dart';
@@ -31,8 +32,48 @@ class _MyHomePageState extends State<MyHomePage> {
        AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+      ),drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text(
+                'Menu',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text('Item 1'),
+              onTap: () {
+               
+                Navigator.pop(context); 
+              },
+            ),
+            ListTile(
+              title: Text('Item 2'),
+              onTap: () {
+                
+                Navigator.pop(context); 
+              },
+            ),
+            ListTile(
+              title: Text('Item 3'),
+              onTap: () {
+               
+                Navigator.pop(context); 
+              },
+            ),
+          ],
+        ),
       ),
-      body: const Card() 
+      body: const Card(),
+      floatingActionButton: const ShowModal(),
 
     );
   }
@@ -58,10 +99,7 @@ class _CardState extends State<Card> {
       height: 110,
       child: 
             const CardStudent(todo: Todo(id: "te", description: "te"),
-    )
-    )
-    ;
-    }
+    ));}
     );}
       
      
