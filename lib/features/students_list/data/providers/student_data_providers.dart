@@ -4,11 +4,11 @@ import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:zara_ao/config/app_http.dart';
 import 'package:zara_ao/core/constants/Constants.dart';
-import 'package:zara_ao/features/data/model/todo.dart';
+import 'package:zara_ao/features/students_list/data/model/todo.dart';
 
 
 
-class TodoProvider extends  ChangeNotifier {
+class StudentListProvider extends  ChangeNotifier {
 
     final AppHttp _http = AppHttp(baseUrl: Constants.baseUri);
 

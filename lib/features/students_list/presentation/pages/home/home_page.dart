@@ -4,9 +4,8 @@ import 'package:provider/provider.dart' as provider;
 import 'package:flutter/material.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:zara_ao/features/data/providers/todoProvider.dart';
-import 'package:zara_ao/features/presentation/widgets/modal.dart';
-import 'package:zara_ao/features/presentation/widgets/widgets.dart';
+import 'package:zara_ao/features/students_list/presentation/widgets/modal.dart';
+import 'package:zara_ao/features/students_list/presentation/widgets/widgets.dart';
 
 import '../../../data/model/todo.dart';
 
